@@ -1,0 +1,29 @@
+.container {
+  text-align: center;
+}
+
+.card {
+  margin-top: 10px;
+}
+
+h2 {
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.modal-body {
+  text-align: left;
+}
+
+#data {
+  color: red !important;
+}
+
+#tipo {
+  color: white;
+}
+
+#tipoevento {
+  color: white;
+}
+

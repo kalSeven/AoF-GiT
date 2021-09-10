@@ -1,0 +1,52 @@
+body {
+  background-color: #28282B !important;
+}
+
+p {
+  color: white
+}
+
+h5 {
+  color: green
+}
+
+small {
+  color: white !important;
+}
+
+h2 {
+  color: greenyellow !important;
+}
+
+#data {
+  color: red !important;
+}
+
+#type {
+  color: blue !important;
+}
+
+
+h3 {
+  color:#fdf800
+}
+
+h6 {
+  color: whitesmoke !important;
+}
+
+h1 {
+color: red;
+}
+
+.nav {
+  background-color: black !important;
+}
+
+li {
+  color: royalblue !important;
+}
+
+label {
+  color:white !important;
+}

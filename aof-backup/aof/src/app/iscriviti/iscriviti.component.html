@@ -1,0 +1,89 @@
+<div class="container">
+  <div class="card text-center">
+    <div class="card-header">
+      <h4>SEZIONE PRESENZE</h4>
+    </div>
+    <div class="card-body bg-dark">
+      <h5 class="card-title">
+        Visualizza le adesioni del Team ai prossimi Eventi o Giocate
+      </h5>
+      <p class="card-text">
+        Scegli l'evento e/o la giocata e comunica la tua presenza!
+      </p>
+      <a href="#" routerLink="/home" class="btn btn-danger"
+        >Ritorna alla Home.</a
+      >
+    </div>
+  </div>
+  <br />
+  <h2>ISCRIZIONI</h2>
+  <br />
+  <label>Nome e Cognome Partecipante</label>
+  <input
+    type="text"
+    class="form-control"
+    id="inputPassword2"
+    placeholder="Es: Mario Rossi"
+    [(ngModel)]="membro.nome"
+  />
+  <br />
+  <label>Data dell'Evento</label>
+  <input
+    type="text"
+    class="form-control"
+    id="inputPassword2"
+    placeholder="Es: 21/07"
+    [(ngModel)]="membro.datapresenza"
+  />
+  <br />
+  <label>Tipologia Evento</label>
+  <input
+    type="text"
+    class="form-control"
+    id="inputPassword2"
+    placeholder="Es: Giocata"
+    [(ngModel)]="membro.tipologia"
+  />
+  <br />
+  <label>Presente o Assente</label>
+  <input
+    type="text"
+    class="form-control"
+    id="inputPassword2"
+    placeholder="Es: Presente"
+    [(ngModel)]="membro.presenza"
+  />
+  <button type="button" class="btn btn-success my-3" (click)="savePresenza()">
+    REGISTRA LA TUA PRESENZA
+  </button>
+  <br />
+
+  <br />
+  <h3>CERCA FRA I PRESENTI</h3>
+  <div class="container mt-5">
+    <div class="form-group">
+      <input
+        type="text"
+        class="form-control"
+        placeholder="Cerca per Nome, Data, Tipo o Presenza"
+        [(ngModel)]="filterTerm"
+      />
+    </div>
+
+    <hr />
+    <div
+      class="giallo"
+      *ngFor="let item of membri | keyvalue | filter: filterTerm"
+    >
+      <p>Nome:</p>
+      <h6>{{ item.value.nome }}</h6>
+      <p>Data:</p>
+      <h6>{{ item.value.datapresenza }}</h6>
+      <p>Tipo:</p>
+      <h6>{{ item.value.tipologia }}</h6>
+      <p>Presente o Assente:</p>
+      <h6>{{ item.value.presenza }}</h6>
+      <hr />
+    </div>
+  </div>
+</div>

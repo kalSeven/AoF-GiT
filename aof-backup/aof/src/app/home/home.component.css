@@ -1,0 +1,19 @@
+.container {
+  text-align: center;
+}
+.card-body {
+  border: 1px grey inset;
+}
+
+.row {
+  margin-top: 10px;
+  margin-bottom: 15px;
+}
+
+button {
+  margin-top: 10px;
+}
+
+.modal-body {
+  text-align: left;
+}

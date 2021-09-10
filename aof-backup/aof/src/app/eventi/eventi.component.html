@@ -1,0 +1,20 @@
+<div class="container">
+  <div class="card text-center">
+    <div class="card-header">
+      <h4>SEZIONE EVENTI</h4>
+    </div>
+    <div class="card-body bg-dark">
+      <h5 class="card-title">Visualizza i prossimi eventi e quelli in corso</h5>
+      <p class="card-text">Rimani sempre aggiornato sui prossimi eventi a cui poter partecipare.</p>
+      <a href="#" routerLink="/home" class="btn btn-danger">Ritorna alla Home.</a>
+    </div>
+    </div>
+  <h2>EVENTI:</h2>
+  <div  *ngFor="let item of events | keyvalue: reverseKeyOrder">
+      <h5 id="data">{{item.value.dataevento}}</h5>
+      <h5 style="color: white;" id="tipo">{{item.value.tipoevento}}</h5>
+      <h5 style="color: #Fdf800;">{{item.value.typeevento}}</h5>
+      <h5 style="color: lightgreen;" id="description" class="card-text">{{item.value.descriptionevento}}</h5>
+    <hr>
+</div>
+<h3>HAI VISUALIZZATO TUTTI GLI EVENTI!</h3>

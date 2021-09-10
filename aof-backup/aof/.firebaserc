@@ -1,0 +1,7 @@
+{
+  "projects": {
+    "default": "aofapp-a08ec",
+    "aofapp": "aceofapp-707d2"
+  },
+  "targets": {}
+}

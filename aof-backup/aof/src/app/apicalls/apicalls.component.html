@@ -1,0 +1,185 @@
+
+<h1>PANNELLO DI CONTROLLO</h1>
+<h3>SEZIONE SEGRETA PER IL MANAGEMENT MULTIMEDIALE DELL'APPLICAZIONE</h3>
+<hr />
+<h6>
+  Fornire l'accesso a questo componente, permetterà a chiunque lo possegga la facoltà di creazione dei contenuti.
+</h6>
+
+<hr />
+
+<div class="container">
+  <!-- Button trigger modal -->
+<button type="button" class="btn btn-danger mb-3" data-bs-toggle="modal" data-bs-target="#staticBackdrop">
+  Voglio pulire il database!
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="staticBackdrop" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="staticBackdropLabel">Che cosa succede?</h5>
+      </div>
+      <div class="modal-body">
+        Ad ogni Giocata generata, verrà mostrata alla fine dello schermo una chiave corrispondente ad essa.
+        <br>
+        Poiché Il Database purtroppo ha dei limiti logici, non sarà possibile eliminarne una singolarmente.
+        <br>
+        Si potrà tuttavia utilizzare un qualunque pulsante per pulire il Database per intero.
+        <br>
+        Ciò tuttavia, può rivelarsi utile in quanto vi è un limite dettato dal piano gratuito di utilizzo del Database, e pulirlo può prevenire il raggiungimento del Data Cap al quale corrisponde il shutdown del db e del server hosting.
+        <br>
+        <strong>N.B. E' POSSIBILE TUTTAVIA ELIMINARE UN SINGOLO CONTENUTO DALLA PIATTAFORMA ESTERNA FIREBASE.</strong>
+        <br>
+        <b>LA PROCEDURA E' IRREVERSIBILE E CANCELLERA': GIOCATE, EVENTI E PRESENZE!</b>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+      </div>
+    </div>
+  </div>
+</div>
+  <div class="row">
+    <div class="col">
+      <h5>Anteprima dell'Evento:</h5>
+      <p><strong>Data Evento: </strong>{{event.dataevento}}</p>
+      <p><strong>Tipo Evento: </strong>{{event.tipoevento}}</p>
+      <p><strong>Titolo Evento: </strong>{{ event.typeevento }}</p>
+      <p><strong>Descrizione Evento: </strong>{{event.descriptionevento}}</p>
+    </div>
+  </div>
+  <hr />
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <label for="inputPassword2" class="visually-hidden"
+          >Data dell'Evento</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword2"
+          placeholder="Inserisci una Data"
+          [(ngModel)]="event.dataevento"
+        />
+      </div>
+      <div class="col">
+        <label for="inputPassword2" class="visually-hidden"
+          >Tipo di Evento</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword2"
+          placeholder="Inserisci un Tipo"
+          [(ngModel)]="event.tipoevento"
+        />
+      </div>
+      <div class="col">
+        <label for="inputPassword2" class="visually-hidden"
+          >Titolo dell'Evento</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword2"
+          placeholder="Inserisci un Titolo"
+          [(ngModel)]="event.typeevento"
+        />
+      </div>
+      <div class="col">
+        <label for="inputPassword2" class="visually-hidden"
+          >Desc. dell'Evento:</label
+        >
+        <input
+          type="text"
+          class="form-control"
+          id="inputPassword2"
+          placeholder="Inserisci una Descrizione"
+          [(ngModel)]="event.descriptionevento"
+        />
+      </div>
+    </div>
+  </div>
+  <button type="submit" class="btn btn-success mb-3" (click)="saveEvento()">
+    Registra l'Evento
+  </button>
+    <hr />
+    <br />
+<!--     <button type="button" class="btn btn-danger mb-3" (click)="rimuoviGioco(item.key)">Delete</button> -->
+<p>
+  <button class="btn btn-danger" type="button" data-bs-toggle="collapse" data-bs-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+    ELIMINA IL DATABASE!
+  </button>
+</p>
+<div class="collapse" id="collapseExample">
+  <div class="card card-body bg-dark">
+    <div *ngFor="let item of events | keyvalue">
+      <p>Key: {{item.key}}</p>
+      <button type="button" class="btn btn-danger mb-3" (click)="rimuoviGioco(item.key)">Pulisci tutto il Database</button>
+    </div>
+  </div>
+</div>
+
+
+
+
+    <br>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <!-- <div class="row">
+      <div class="col">
+        <button type="button" class="btn btn-danger">Gestisci le Giocate</button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-warning">Gestisci gli Eventi</button>
+      </div>
+      <div class="col">
+        <button type="button" class="btn btn-info">Questo bottone non fa assolutamente nulla</button>
+      </div>
+    </div>
+  </div>
+
+  <hr> -->
+
+<!--   <div *ngFor="let item of games | keyvalue">
+{{item.value.description}}, {{item.value.title}}, {{item.value.data}}<br>
+ {{item.key}} <br>
+ {{item.value.title}} <button (click)="rimuoviGioco()">X</button>
+  </div> -->
+
+
+
+  <!-- <div *ngFor="let item of games | keyvalu"e>
+<b>Descrizione giocata: {{item.value.description}}</b> <b>Titolo giocata: {{item.value.title}}</b>
+</div> -->
+
+  <!-- <div *ngFor="let item of games | keyvalue">
+<b>Descrizione giocata: {{item.value.description}}</b> <b>Titolo giocata: {{item.value.title}}</b>
+</div>
+
+
+<div *ngFor="let item of games | keyvalue">
+  <b>Descrizione giocata: {{item.value.description}}</b> <b>Titolo giocata: {{item.value.type}}</b> <b>{{item.value.data}}</b>
+  </div> -->
+</div>
